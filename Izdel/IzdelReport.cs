@@ -36,7 +36,7 @@ namespace Izdel
             using (var w = new StreamWriter("report.csv", false ,enc))
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                w.WriteLine("Изделие, Кол-во, Стоимость, Цена");     
+                w.WriteLine("Изделие;Кол-во;Стоимость;Цена");     
                 while (reader.Read())
                 {
                     string name = reader.GetString(1);
@@ -47,7 +47,7 @@ namespace Izdel
 
                     FormatNameHierarchy(ref name,lvl);
 
-                    w.WriteLine($"{name},{kol},{total},{price}");
+                    w.WriteLine($"{name};{kol};{total};{price}");
                     w.Flush();
                 }
 
